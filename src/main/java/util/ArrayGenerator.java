@@ -18,18 +18,25 @@ public final class ArrayGenerator {
         return array;
     }
 
+    public static int[] createNumerousArray() {
+        int[] array = new int[100];
+        for (int i = 0; i < array.length; i++) {
+            array[i] = random.nextInt(10000);
+        }
+        return array;
+    }
+
     public static void printArray(int[] array) {
         System.out.print("Array: ");
         for (int i = 0; i < array.length; i++) {
-            System.out.print(" "+array[i]);
+            System.out.print(" " + array[i]);
         }
         System.out.println();
     }
 
     private static void fillingIn(int[] array) {
         for (int i = 0; i < array.length; i++) {
-            int tmpVar = random.nextInt(100);
-            array[i] = tmpVar;
+            array[i] = random.nextInt(100);
         }
     }
 }
