@@ -35,8 +35,26 @@ public class Story1Test {
     }
 
     @Test
-    public void SubTask1() {
-        int[] specificArray = subTask2.getSpecificArray(arrayThreeDigitNumbers);
-        ArrayGenerator.printArray(specificArray);
+    public void subTask2() {
+        long x = System.currentTimeMillis();
+        for (int i = 0; i < 10; i++) {
+            for (int j = 0; j < 1000000; j++) {
+                subTask2.getSpecificArray(arrayThreeDigitNumbers);
+            }
+        }
+        long y = System.currentTimeMillis();
+        System.out.println(y - x);
+    }
+
+    @Test
+    public void test() {
+        long x = System.currentTimeMillis();
+        for (int i = 0; i < 10; i++) {
+            for (int j = 0; j < 1000000; j++) {
+                subTask2.filter(arrayThreeDigitNumbers);
+            }
+        }
+        long y = System.currentTimeMillis();
+        System.out.println(y - x);
     }
 }

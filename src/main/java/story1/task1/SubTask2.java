@@ -1,18 +1,18 @@
 package story1.task1;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 //Все трехзначные числа, в десятичной записи которых нет одинаковых цифр.
+
 public class SubTask2 {
 
     public int[] getSpecificArray(int[] array) {
         int[] threeDigitNumbersArray = getThreeDigitNumbersArray(array);
-        List<Integer> integers = new ArrayList<Integer>();
-        for (int i = 0; i < threeDigitNumbersArray.length; i++) {
-            int integer = threeDigitNumbersArray[i];
-            boolean checkCondition = isCheckCondition(integer);
-            if (checkCondition) {
+        List<Integer> integers = new ArrayList<>();
+        for (int integer : threeDigitNumbersArray) {
+            if (isCheckCondition(integer)) {
                 integers.add(integer);
             }
         }
@@ -20,7 +20,7 @@ public class SubTask2 {
     }
 
     private int[] getThreeDigitNumbersArray(int[] array) {
-        List<Integer> integers = new ArrayList<Integer>();
+        List<Integer> integers = new ArrayList<>();
         for (int i = 0; i < array.length - 1; i++) {
             int tmp = array[i];
             if (tmp / 100 < 10 && tmp / 100 >= 1) {
@@ -45,5 +45,15 @@ public class SubTask2 {
             isCheck = true;
         }
         return isCheck;
+    }
+
+
+    public int[] filter(int[] numbers) {
+        return Arrays.stream(numbers)
+                .filter(v -> v > 99 && v < 1000)
+                .filter(v -> v / 100 != v % 10)
+                .filter(v -> v / 100 != v % 100 / 10)
+                .filter(v -> v % 100 / 10 != v % 10)
+                .toArray();
     }
 }
