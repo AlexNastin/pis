@@ -13,7 +13,6 @@ public class Story1Test {
     private SubTask2 subTask2;
     private int[] array;
     private int[] arrayThreeDigitNumbers;
-
     @BeforeEach
     public void init() {
         subTask1 = new SubTask1();
