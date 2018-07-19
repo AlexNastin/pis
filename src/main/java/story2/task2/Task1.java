@@ -38,7 +38,6 @@ public class Task1 {
         return (-b + Math.sqrt(discriminant)) / (2 * a);
     }
 
-
     private static String getComplexRootX2(double a, double b, double discriminant) {
         double real = -b / (2 * a);
         double imaginary = Math.sqrt(Math.abs(discriminant)) / (2 * a);
