@@ -5,7 +5,6 @@ import java.util.Arrays;
 import java.util.List;
 
 //Все трехзначные числа, в десятичной записи которых нет одинаковых цифр.
-
 public class SubTask2 {
 
     public int[] getSpecificArray(int[] array) {
